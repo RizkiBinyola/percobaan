@@ -1,0 +1,120 @@
+.tbi-tooltip {
+    font-family: Ubuntu Mono;
+    outline: 0;
+    cursor: help;
+    position: relative;
+    text-decoration: none;
+    border-bottom: 1px dotted #000;
+}
+
+.tbi-tooltip span {
+    margin-left: -999em;
+    position: absolute;
+    color: #000;
+}
+
+.tbi-tooltip:hover span {
+    font-family: Trebuchet MS, Calibri, Tahoma, Geneva, sans-serif;
+    position: absolute;
+    left: 1em;
+    top: 2em;
+    z-index: 99;
+    margin-left: 0;
+    width: 36px;
+    height: 70px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 0 0 9px #000;
+    -webkit-box-shadow: 0 0 9px #000;
+    box-shadow: 0 0 9px #000;
+}
+
+.tbi-tooltip:hover img {
+    border: 0;
+    margin: -10px 0 0 -55px;
+    float: left;
+    position: absolute;
+}
+
+.tbi-tooltip:hover em {
+    font-family: Candara, Tahoma, Geneva, sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    display: block;
+    padding: .2em 0 .6em 0;
+}
+
+.custom {
+    padding: .5em .8em .8em 2em;
+}
+
+.tbi-B {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/B.1.gif);
+}
+
+.tbi-C {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/C-chord.jpg);
+}
+
+.tbi-D {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/d-chord.jpg);
+}
+
+.tbi-E {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/E-Chord.jpg);
+}
+
+.tbi-F {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/F-chord.jpg);
+}
+
+.tbi-G {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/G-chord.jpg);
+}
+
+.tbi-A {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/A-chord.jpg);
+}
+
+.tbi-Bm {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/b-minor-chord01.gif);
+}
+
+.tbi-Cm {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/c-minor-chord01.gif);
+}
+
+.tbi-Dm {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/d-minor-chord.jpg);
+}
+
+.tbi-Em {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/E-minor-chord01.gif);
+}
+
+.tbi-Fm {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/f-minor-chord.gif);
+}
+
+.tbi-Gm {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/g-minor-chord.gif);
+}
+
+.tbi-Am {
+    border: 1px solid #2bb0d7;
+    background: url(https://www.chordtela.com/wp-content/uploads/2020/10/a-minor-chord.gif);
+}

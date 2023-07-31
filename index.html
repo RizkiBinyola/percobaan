@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js' id='jquery-js'></script>
+</head>
+<body>
+    <div class="transpose-toolbox">
+        <table style="width:100%; background-color: #000; padding: 0px;">
+        <tr style="padding-bottom:20px">
+            <td align="center" width="300">
+            <span class="telawow">
+            <svg style="width:10px;height:10px" viewBox="0 0 24 24">
+                <path d="M21,3V15.5A3.5,3.5 0 0,1 17.5,19A3.5,3.5 0 0,1 14,15.5A3.5,3.5 0 0,1 17.5,12C18.04,12 18.55,12.12 19,12.34V6.47L9,8.6V17.5A3.5,3.5 0 0,1 5.5,21A3.5,3.5 0 0,1 2,17.5A3.5,3.5 0 0,1 5.5,14C6.04,14 6.55,14.12 7,14.34V6L21,3Z" fill="#00cc00"></path>
+                </svg>
+                Transpose:</span>
+                <button class="button" id="transdown" title="Transpose Turun">
+                <svg style="width:10px;height:10px" viewBox="0 0 24 24">
+                    <path d="M10,4H14V13L17.5,9.5L19.92,11.92L12,19.84L4.08,11.92L6.5,9.5L10,13V4Z" fill="#00cc00"></path>
+                    </svg>
+                </button>
+                <button class="button" id="transup" title="Transpose Naik">
+                <svg style="width:10px;height:10px" viewBox="0 0 24 24">
+                    <path d="M14,20H10V11L6.5,14.5L4.08,12.08L12,4.16L19.92,12.08L17.5,14.5L14,11V20Z" fill="#00cc00"></path>
+                    </svg>
+                </button>
+            </td>
+            </tr>
+        </table>
+    </div> 
+
+    <a class="tbi-tooltip">C<span class="custom tbi-C"></span></a>                    <a class="tbi-tooltip">Em<span class="custom tbi-Em"></span></a>
+    pernah berpikir tuk pergi
+   <a class="tbi-tooltip">F<span class="custom tbi-F"></span></a>                         <a class="tbi-tooltip">C<span class="custom tbi-C"></span></a>        <a class="tbi-tooltip">G<span class="custom tbi-G"></span></a>
+    dan terlintas tinggalkan kau sendiri
+   <a class="tbi-tooltip">C<span class="custom tbi-C"></span></a>                    <a class="tbi-tooltip">Em<span class="custom tbi-Em"></span></a>
+    sempat ingin sudahi sampai di sini
+   <a class="tbi-tooltip">F<span class="custom tbi-F"></span></a>                 <a class="tbi-tooltip">C<span class="custom tbi-C"></span></a>         <a class="tbi-tooltip">G<span class="custom tbi-G"></span></a>
+    coba lari dari kenyataan tapi
+   
+   Reff:
+              <a class="tbi-tooltip">Dm<span class="custom tbi-Dm"></span></a>     <a class="tbi-tooltip">F<span class="custom tbi-F"></span></a>
+     ku tak bisa.. jauh..
+       <a class="tbi-tooltip">C<span class="custom tbi-C"></span></a>        <a class="tbi-tooltip">G<span class="custom tbi-G"></span></a>
+     jauh.. darimu..
+              <a class="tbi-tooltip">Dm<span class="custom tbi-Dm"></span></a>      <a class="tbi-tooltip">F<span class="custom tbi-F"></span></a>
+     ku tak bisa ...jauh..
+       <a class="tbi-tooltip">C<span class="custom tbi-C"></span></a>        <a class="tbi-tooltip">G<span class="custom tbi-G"></span></a>
+     jauh.. darimu..
+   
+   Int. <a class="tbi-tooltip">C<span class="custom tbi-C"></span></a>….
+
+
+    <script data-rocket-type="text/javascript">
+        jQuery(document).ready(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+        jQuery("tela").toggleClass("tela")
+        });
+        var match, kuncigitar = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "Bb", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"],
+        kuncigitarRegex = /A#|C#|D#|F#|G#|Ab|Bb|Db|Eb|Gb|A|B|C|D|E|F|G/g;
+        $("#transup").click(function() {
+        $(".tbi-tooltip").each(function() {
+        for (var t = $(this).html(), i = "", e = t.split(kuncigitarRegex), a = 0; match = kuncigitarRegex.exec(t);) {
+        var c = kuncigitar.indexOf(match[0]);
+        i += e[a++] + kuncigitar[c + 1]
+        }
+        i = (i = (i = (i = (i = (i += e[a]).replace(/Gb/g, "F#")).replace(/Ab/g, "G#")).replace(/Bb/g, "A#")).replace(/Db/g, "C#")).replace(/Eb/g, "D#"), $(this).html(i).removeClass("tbi-tooltip " + t).addClass("tbi-tooltip " + i)
+        }), $(".tbi-tooltip").each(function() {
+        var t = $(this).text().trim(),
+        i = $(this).find("span");
+        if (t.includes("/")) {
+        var e = t.split("/")[0].replace("#", "cis");
+        i.attr("class", "custom tbi-" + e)
+        } else i.attr("class", "custom tbi-" + t.replace("#", "cis"))
+        })
+        }), $("#transdown").click(function() {
+        $(".tbi-tooltip").each(function() {
+        for (var t = $(this).html(), i = "", e = t.split(kuncigitarRegex), a = 0; match = kuncigitarRegex.exec(t);) {
+        var c = kuncigitar.indexOf(match[0], 1);
+        i += e[a++] + kuncigitar[c - 1]
+        }
+        i = (i = (i = (i = (i = (i += e[a]).replace(/Gb/g, "F#")).replace(/Ab/g, "G#")).replace(/Bb/g, "A#")).replace(/Db/g, "C#")).replace(/Eb/g, "D#"), $(this).html(i).removeClass("tbi-tooltip " + t).addClass("tbi-tooltip " + i)
+        }), $(".tbi-tooltip").each(function() {
+        var t = $(this).text().trim(),
+        i = $(this).find("span");
+        if (t.includes("/")) {
+        var e = t.split("/")[0].replace("#", "cis");
+        i.attr("class", "custom tbi-" + e)
+        } else i.attr("class", "custom tbi-" + t.replace("#", "cis"))
+        })
+        });
+        });
+    </script>
+
+    <script type='text/javascript' id='rocket-browser-checker-js-after'>
+        "use strict";
+
+        var _createClass = function () {
+        function defineProperties(target, props) {
+        for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+        }
+        }
+        return function (Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) defineProperties(Constructor, staticProps);
+        return Constructor;
+        };
+        }();
+
+        function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+        }
+        }
+
+        var RocketBrowserCompatibilityChecker = function () {
+        function RocketBrowserCompatibilityChecker(options) {
+        _classCallCheck(this, RocketBrowserCompatibilityChecker);
+        this.passiveSupported = false;
+        this._checkPassiveOption(this);
+        this.options = !!this.passiveSupported && options;
+        }
+
+        _createClass(RocketBrowserCompatibilityChecker, [{
+        key: "_checkPassiveOption",
+        value: function (self) {
+        try {
+        var options = {
+        get passive() {
+        return !(self.passiveSupported = true);
+        }
+        };
+        window.addEventListener("test", null, options);
+        window.removeEventListener("test", null, options);
+        } catch (err) {
+        self.passiveSupported = false;
+        }
+        }
+        }, {
+        key: "initRequestIdleCallback",
+        value: function () {
+        if (!("requestIdleCallback" in window)) {
+        window.requestIdleCallback = function (cb) {
+        var start = Date.now();
+        return setTimeout(function () {
+        cb({
+        didTimeout: false,
+        timeRemaining: function () {
+        return Math.max(0, 50 - (Date.now() - start));
+        }
+        });
+        }, 1);
+        };
+        }
+        if (!("cancelIdleCallback" in window)) {
+        window.cancelIdleCallback = function (id) {
+        clearTimeout(id);
+        };
+        }
+        }
+        }, {
+        key: "isDataSaverModeOn",
+        value: function () {
+        return "connection" in navigator && !!navigator.connection.saveData;
+        }
+        }, {
+        key: "supportsLinkPrefetch",
+        value: function () {
+        var elem = document.createElement("link");
+        return elem.relList && elem.relList.supports && elem.relList.supports("prefetch") && window.IntersectionObserver && "isIntersecting" in IntersectionObserverEntry.prototype;
+        }
+        }, {
+        key: "isSlowConnection",
+        value: function () {
+        return "connection" in navigator && "effectiveType" in navigator.connection && (navigator.connection.effectiveType === "2g" || navigator.connection.effectiveType === "slow-2g");
+        }
+        }]);
+
+        return RocketBrowserCompatibilityChecker;
+        }();
+    </script>
+
+</body>
+</html>
